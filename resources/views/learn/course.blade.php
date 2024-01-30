@@ -144,7 +144,7 @@
 							<div class="timer">
 							
 							  <div class="loader">
-							  		{{-- <div class="bk" style="width: 255.03px;"></div> --}}
+							  		<div class="bk" style="width: 255.03px;"></div>
 								</div>
 							  <span aria-label="timer">00:00</span>
 							</div>

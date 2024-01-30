@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="author" content="Themezhub" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>mmm</title>		 
+        <title>mmm- sinnamuthu</title>		 
         <!-- Custom CSS -->
         <link href="{{asset('assets/css/styles.css')}}" rel="stylesheet">
         <link href="{{asset('assets/css/mmm-styles.css')}}" rel="stylesheet">
