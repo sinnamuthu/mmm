@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentprofileController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/course', function () {
     return view('/learn/course');
-});
+})->middleware('auth');
 
 Route::get('/coursewatch', 'App\Http\Controllers\CourseController@coursewatch');
 
@@ -45,7 +46,7 @@ Route::get('/coursedashboard', function () {
 Route::get('/batchdashboard', function () {
     return view('/admin/dashboard2');
 })->name('batchdashboard');
- 
+
 
 
 
