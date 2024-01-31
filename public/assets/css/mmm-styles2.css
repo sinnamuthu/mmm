@@ -1,0 +1,368 @@
+.instructorinner_wrap{
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin:10px 40px;
+    padding: 20px 30px;
+  }
+  
+  .instuctor_title{
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  .instruct_icon{
+  
+    padding-left: 50px;
+    padding-top: 10px;
+  
+  }
+  
+  .instructor_data{
+    padding-top: 80px;
+  }
+  
+  .instructor_info{
+  
+    margin-bottom:50px;
+    
+  }
+  
+  .instructor_add_t{
+    margin-top: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  height: 40px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #0094D4;
+  }
+  
+  
+  .btn_instructor {
+    
+  margin-top: 50px;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 600;
+  height: 40px;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #0094D4;
+  }
+  
+  .btn_instructor:hover {
+  
+    color: #ffffff!important;
+  }
+  
+  .instructor_add_text{
+    margin-top: 30px;
+    padding-left: 20px;
+  }
+  
+  .inst_subhed{
+  
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #888888;
+  
+  }
+  
+  .instruct_edit{
+    width: 100%;
+    margin:  auto 0;
+    display: flex;
+    height: 45px;
+    font-weight: 600;
+    border-radius: 5px;
+    color: #000000 !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+  }
+  
+  .btn_create a {
+    border: 1px solid #0094D4;
+    padding: 10px;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #0094D4;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+  }
+  
+  /*.modal {
+      display: none; /* Hidden by default 
+      position: fixed; /* Stay in place 
+      z-index: 1; /* Sit on top 
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width 
+      height: 100% /* Full height 
+      overflow: auto; /* Enable scroll if needed 
+      background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity 
+    }
+  
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered 
+      padding: 40px;
+      border: 1px solid #ffffff;
+      width: 30%; /* Could be more or less, depending on screen size 
+    }*/
+  
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    .instructor_info_batch{
+        margin: 0px 20px;
+        margin-bottom: 50px;
+    }
+  
+  .dashboard_wrap_batch{
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .daterangepicker td.active, .daterangepicker td.active:hover{
+  
+   background-color: #0094D4!important;
+  
+  }
+  
+  
+  th.next.available, .prev.available{
+    background-color: rgba(108, 108, 108, 0.1) !important;
+  }
+  
+  .daterangepicker td.available:hover {
+  
+    color: #0094d4!important;
+  }
+  
+  #del_txt{
+    color: red!important;
+  }
+  
+  .del{
+    color: red!important;
+  }
+  
+  .container-with-bg {
+    background-image: url('assets/img/bg_mmm.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px; /* Set the height according to your design */
+    /* Add any other styles you want for the container */
+  }
+  
+  
+  
+  .btn_bi{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+  }
+  
+  .notifi_num{
+    background: #ff5722;
+    padding: 3px 6px;
+    position: relative;
+    border-radius: 50%;
+    background:#ff5722;
+    color: #ffffff;
+    line-height: 1;
+    font-style: normal;
+    font-size: 11px;
+    top: -25px;
+    right: -5px;
+  }
+  
+   .btn_b{
+    padding-top: 20px;
+    padding-left: 10px;
+   }
+  
+   
+  .student-profile-blk .left-panel{background: #fff;padding-top: 15px;padding-bottom: 15px;height: calc(100vh - 50px);height: 100%;border-radius: 10px;}
+  .choose-img > input {text-indent: -9999em;margin-top:-25px;display: block;}
+  .choose-img figure{margin: 0;}
+  .student-profile-blk .left-panel .nav ul li a {display: block;padding: 15px 15px 15px 60px;position: relative;font-size: 19px;
+  color: #fff;line-height: 32px;margin-bottom: 2px;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;
+  -o-transition: all 0.5s;transition: all 0.5s;}
+  .student-profile-blk .left-panel .d-user-avater{padding: 0;}
+  .d-navigation ul li a {font-size:15px;color: #333;font-weight: 500;display: inline-block;}
+  .d-navigation ul li:hover>a,.d-navigation ul li.active>a {font-size:15px;color: #0094D4 !important;background: rgba(0, 148, 212, 0.15) !important}
+  
+  .btn-back{position:relative;}
+  .btn-back a{position:relative;color: #000;font-size: 15px;font-weight: 600;padding-left: 34px;}
+  .btn-back a:before{position: absolute;content:'';left:0;top:50%;transform: translateY(-50%);width: 24px;height: 24px;background: url('../img/btn-back.png') no-repeat left center;}
+  .student-profile-blk .btn-back{padding-top: 20px;}
+  
+  .student-profile-blk .left-panel .d-user-avater h3{color: #192a31;}
+  .student-profile-blk .left-panel .d-user-avater span{color: #3c4852;}
+  
+  
+  .number_stl{
+  font-size: 20px;
+  color: #202224;
+  font-weight: 500;
+  opacity: 70%;
+  }
+  
+  .number_stlnum{
+  font-size: 23px;
+  color: #202224;
+  font-weight: 600;
+  opacity: 90%;
+  
+  
+  }
+  
+  .top_box{
+  background-color: #ffffff;
+  border-radius: 10px;
+  
+  }
+  
+  .dashboard_wrap_top{
+  background-color: #F7F8F9;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+  
+  }
+  
+  .top_inner_box{
+  padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 50px;
+  
+  }
+  
+  .boxtab{
+  margin-top: -25px;
+  padding: 30px;
+  }
+  
+  .view_all{
+  color: #0094D4;
+  font-weight: 500;
+  }
+  
+  .del_top_txt{
+  color: red;
+  }
+  
+  .ed_detail_dash{
+  padding: 10px 0px;
+  }
+  
+  .dash_over{
+  padding-top: 20px;
+  }
+  
+  .dsh_tab .smalls{
+  font-size: 50px;
+  font-weight: 500;
+  
+  }
+  
+  .dash_list .small{
+   font-size: 14px;
+   font-weight: 5x00;
+  }
+  
+  .boxtab {
+  /* Add your styles for the boxtab here */
+  cursor: pointer; /* Change the cursor to indicate it's clickable */
+  }
+  
+  .top_box:hover {
+  background-color: #0094D41A; /* Change the background color on hover */
+  }
+  
+  .boxtab-link {
+  display: block;
+  text-decoration: none;
+  }
+  
+  .instructor_info_batch .table.dash_list tbody tr.act{background-color: #E5F4FB;}
+  
+  
+  
+  .dashbimg {
+  order: 1; 
+  }
+  
+  .input-group {
+  position: relative;
+  }
+  
+  .input-group-text {
+  /* position: absolute; */
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  }
+  
+  
+  /* popup  */
+  .popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  }
+  
+  .popup-content {
+  text-align: left;
+  }
+  
+  .popup .btn{color: #fff;}
+  
+  .form-group {
+  margin-bottom: 10px;
+  }
+  
+  .btn-wrap {
+  margin-top: 50px;
+  text-align: center;
+  }
+  
+  /* .btn {
+  margin: 0px 10px;
+  } */
+  
+  .btn-ask-qst {
+  margin: 0 10px;
+  }
+  
+  .input-group-append{background-color: #e9ecef;border: 1px solid rgba(0,0,0,.15);padding: 0.5rem 0.75rem;}
