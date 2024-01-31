@@ -45,7 +45,7 @@ Route::get('/coursedashboard', function () {
 Route::get('/batchdashboard', function () {
     return view('/admin/dashboard2');
 })->name('batchdashboard');
-
+ 
 
 
 
