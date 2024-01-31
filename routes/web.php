@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentprofileController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/course', function () {
     return view('/learn/course');
-});
+})->middleware('auth');
 
 Route::get('/coursewatch', 'App\Http\Controllers\CourseController@coursewatch');
 
@@ -37,6 +38,13 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 //Route::resource('/createstudent', StudentprofileController::class);
 
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
+
+
+//login
+Route::get('/login', function () {return view('login');})->middleware('guest');
+Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
+Route::post('/logout',[LoginController::class,'logout']);
+
 
 
 
