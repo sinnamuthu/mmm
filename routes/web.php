@@ -39,6 +39,13 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
 
+//dashboard 
+Route::get('/coursedashboard', function () {
+    return view('/admin/dashboard1');
+});
+Route::get('/batchdashboard', function () {
+    return view('/admin/dashboard2');
+})->name('batchdashboard');
 
 //login
 Route::get('/login', function () {return view('login');})->middleware('guest');
