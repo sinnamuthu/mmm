@@ -47,7 +47,7 @@ Route::get('/batchdashboard', function () {
     return view('/admin/dashboard2');
 })->name('batchdashboard');
 
-//login
+//login credentials
 Route::get('/login', function () {return view('login');})->middleware('guest');
 Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
 Route::post('/logout',[LoginController::class,'logout']);
