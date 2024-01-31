@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentprofileController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,8 +51,10 @@ Route::get('/batchdashboard', function () {
 //login credentials
 Route::get('/login', function () {return view('login');})->middleware('guest');
 Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
-Route::post('/logout',[LoginController::class,'logout']);
+Route::get('/logout',[LoginController::class,'logout']);
 
+//admin view profile
+Route::get('/admin_view/edit/{encryptedId}', [AdminController::class, 'edit'])->name('admin_view.edit');
 
 
 

@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="zxx">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="author" content="Themezhub" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Batch Create batch</title>		 
-        <!-- Custom CSS -->
-        <link href="assets/css/styles.css" rel="stylesheet">
-        <link href="assets/css/mmm-styles.css" rel="stylesheet">
-        <link href="assets/css/mmm-styles2.css" rel="stylesheet">
-    </head>
-	
+@include('admin/header')
     <body>
 
         <!-- ============================================================== -->
@@ -110,7 +98,9 @@
 							</ul>
 							
 							<div class="login-blk">
-								<div class="item-img"><img src="assets/img/user-img.png"></div>
+								<a class="dropdown-item" href="{{ route('admin_view.edit',base64_encode(auth()->user()->id)) }}">
+									<div class="item-img"><img src="assets/img/user-img.png"></div>
+								</a>
 								<div class="item-desc">
 									<p>Yogesh kumar </p>
 									<p>ID: 2084965</p>
@@ -146,16 +136,19 @@
 							<!-- /Row -->        
 
 
-					<div class="row create-batch">
+					<div class="row create-batch adm-pro-dash">
 						
 						<div class="col-md-12">
 							<div class="dashboard_wrap"><!--profile form-->	
 								<div class="row ">
 									<div class="col-xl-6 col-lg-6 col-md-6 mt-5 ">
-										<h2 class="m-0">View Profile</h2>
+										<h2 class="m-0">Manage Profile</h2>
 									</div>
 									<div class="col-xl-5 col-lg-2">
-                                        <img class="dashbimg  align-to-right" src="assets/img/man.png" alt="" >
+										<div class="img-upload align-to-right">
+											<input type="file" class="custom-file-input" id="customFile">
+											<img class="dashbimg" src="assets/img/man.png">
+										</div>
 									</div>                                    
 								</div>
                                 
@@ -163,16 +156,17 @@
 								
 								<div class="row">
 									<div class="col-xl-11 col-lg-11 col-md-12">
-										<form>
-                                            
+										<form enctype="multipart/form-data" method="POST" action="">
+                                            @csrf
+          									@method('PUT')
 
 											<div class="form-group smalls">
                                                 <label>Name</label>
-                                                <input type="text" class="form-control" placeholder="Yogesh Kumar">
+                                                <input type="text" class="form-control" name="hospitalname" value="{{$profile[0]['hospitalname']}}" placeholder="Yogesh Kumar">
                                             </div>
                                             <div class="form-group smalls">
                                                 <label>Email Id </label>
-                                                <input type="mail" class="form-control" placeholder="yogesh@gmail.com">
+                                                <input type="mail" class="form-control" name="email" value="{{$profile[0]['email']}}" placeholder="yogesh@gmail.com">
                                             </div>
                                             
                                             <!-- <div class="form-group smalls">
@@ -183,7 +177,7 @@
                                             <div class="form-group smalls">
                                                 <label>Password</label>
                                                 <div class="input-group">
-                                                    <input id="passwordInput" type="password" class="form-control" placeholder="*******">
+                                                    <input id="passwordInput" type="password" value="{{$profile[0]['password']}}" class="form-control" placeholder="*******">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">
                                                             <i id="togglePassword" class="fa fa-eye"></i>
@@ -199,7 +193,7 @@
                                             <div class="d-flex btn-wrap align-to-right">
 												<div class="btn-ask-qst"><a href="javascript:;">Edit Profile</a></div>
 												<div class="btn-ask-qst"><a href="javascript:;">Cancel</a></div>
-												<div class="btn primary"><a href="javascript:;">Save </a></div>
+												<button type="submit" class="btn primary">Update</button>
 											</div>
 											
 										</form>
@@ -222,100 +216,4 @@
 			
 			<!-- ============================ Course Detail ================================== -->
 						
-				<!-- ============================ Footer Start ================================== -->
-				<footer id="footer" class="default">
-					<div class="footer-middle">
-						<div class="container-fluid">
-							<div class="row">
-								
-								<div class="col-lg-4 col-md-5">
-									<div class="footer_widget">
-										<img src="assets/img/logo-mmm-ftr.png" class="mb-2" alt="" />
-									</div>
-								</div>
-								
-								<div class="col-lg-3 col-md-7 ml-auto">
-									<div class="footer_widget">
-										<img src="assets/img/logo-crds-ftr.png" class="mb-2" alt="" />
-									</div>
-								</div>
-								
-								<div class="col-lg-5 col-md-7 ml-auto">
-									<div class="footer_widget">
-										<p><strong>Address</strong> - 4-A, Dr, Mogappair, Chennai, Tamil Nadu 600037</p>	
-										<p><strong>Phone No</strong> <a href="tel:1800123599999" target="_blank">1800 123 599 999</a></p>	
-										<p><strong>Mail Id</strong> <a href="mailto:info@mmm.com" target="_blank">info@mmm.com</a></p>	
-									</div>								
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="footer-bottom">
-						<div class="container">
-							<div class="row align-items-center">
-								<div class="col-lg-12 col-md-12 text-center">
-									<p class="mb-0"><a href="https://themezhub.com"><img src="assets/img/power-bleap.png"></a>.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</footer>
-				<!-- ============================ Footer End ================================== -->
-			
-			<a id="back2Top" class="top-scroll" title="Back to top" href="#"><i class="ti-arrow-up"></i></a>
-			
-
-		</div>
-		<!-- ============================================================== -->
-		<!-- End Wrapper -->
-		<!-- ============================================================== -->
-			
-			
-
-		<!-- ============================================================== -->
-		<!-- All Jquery -->
-		<!-- ============================================================== -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/select2.min.js"></script>
-		<script src="assets/js/slick.js"></script>
-		<script src="assets/js/moment.min.js"></script>
-		<script src="assets/js/daterangepicker.js"></script> 
-		<script src="assets/js/summernote.min.js"></script>
-		<script src="assets/js/metisMenu.min.js"></script>	
-		<script src="assets/js/custom.js"></script>
-		<!-- ============================================================== -->
-		<!-- This page plugins -->
-		<!-- ============================================================== -->		
-		<script>
-			/*File selection*/
-			jQuery('input[name=file]').change(function() {
-				alert(jQuery(this).val()); 
-				});
-				jQuery('figure.filename').click(function() {
-				jQuery('input[name=file]').click();
-			});
-		</script>
-        <script>
-			$('input[name="dates"]').daterangepicker();
-		</script>
-
-        <script>
-                    document.getElementById('togglePassword').addEventListener('click', function() {
-            var passwordInput = document.getElementById('passwordInput');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-            } else {
-                passwordInput.type = 'password';
-            }
-              });
-
-        </script>
-
-
-
-
-	</body>
-</html>
+@include('admin/footer')

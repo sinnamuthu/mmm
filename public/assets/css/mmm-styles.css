@@ -613,3 +613,7 @@ input:checked + .slider:before {-webkit-transform: translateX(26px);-ms-transfor
 #unEnroll .modal-body{text-align: center;}
 #unEnroll p{font-weight: 500;color: #000;font-size: 24px;text-align: center;margin-bottom: 25px;}
 #unEnroll .btn{font-weight: 600;font-size: 20px;}
+
+
+#schedule .modal-backdrop.fade{z-index:2}
+.modal-open .modal{z-index: 1051 !important;}

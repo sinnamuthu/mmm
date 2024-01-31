@@ -54,11 +54,20 @@
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-6 logcontains">
        
-        <img src="assets/img/lft_icon.png" alt="Image" width="500" class="img-fluid">
+        {{-- <img src="assets/img/lft_icon.png" alt="Image" width="500" class="img-fluid"> --}}
+
+        <div id="lottie"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"></script>
+    <script>
+        bodymovin.loadAnimation({
+            container: document.getElementById("lottie"),
+            path: "{{asset('assets/json/data.json')}}"
+        })
+    </script>
       </div>
       <div class="col-md-6 logcontain">
         @if($errors->any())
