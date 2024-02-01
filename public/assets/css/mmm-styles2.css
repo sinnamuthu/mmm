@@ -369,3 +369,55 @@ margin: 0 10px;
 .adm-pro-dash .img-upload{position: relative;display: inline-flex;height: 130px;cursor: pointer;}
 .adm-pro-dash .img-upload .custom-file-input{position: relative;height: 100%;}
 .adm-pro-dash .img-upload .dashbimg{position: absolute;right: 0;}
+
+
+.input-group-append{background-color: #e9ecef;border: 1px solid rgba(0,0,0,.15);padding: 0.5rem 0.75rem;}
+
+
+.form-drop{
+        box-shadow: none !important;
+        background: #ffffff;
+        border: 1px solid #e6ebf5;
+        color: #707e9c;
+        border-radius: 4px;
+}
+
+
+.form-drop:hover{
+  background: #ffffff;
+  color: #707e9c;
+}
+
+.form-drop:active{
+  background: #ffffff;
+  color: #707e9c;
+}
+
+.lab-drop{
+  font-size: 14px!important;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.lab-drop-del{
+  font-size: 14px!important;
+  font-weight: 400;
+  opacity: 0.8;
+  color: red;
+}
+
+.bt{
+  margin-left: 35px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 20px;
+    background-color: #0094d4;
+    color: #ffffff;
+}
+
+.second-drop{
+  padding-left: 50px;
+}
+.form-check-label{
+  padding-left: 10px;
+}

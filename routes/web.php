@@ -41,12 +41,10 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
 
 //dashboard 
-Route::get('/coursedashboard', function () {
-    return view('/admin/dashboard1');
-});
-Route::get('/batchdashboard', function () {
+
+Route::get('/dashboard', function () {
     return view('/admin/dashboard2');
-})->name('batchdashboard');
+})->name('dashboard');
 
 //login credentials
 Route::get('/login', function () {return view('login');})->middleware('guest');
@@ -54,7 +52,9 @@ Route::post("authenticate",[LoginController::class,'authenticate'])->name('authe
 Route::get('/logout',[LoginController::class,'logout']);
 
 //admin view profile
+//Route::resource("/admin_view", AdminController::class)->middleware('auth');
 Route::get('/admin_view/edit/{encryptedId}', [AdminController::class, 'edit'])->name('admin_view.edit');
+Route::post('/admin_view/update/{encryptedId}', [AdminController::class, 'update'])->name('admin_view.update');
 
 
 

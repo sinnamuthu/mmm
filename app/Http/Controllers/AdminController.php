@@ -34,4 +34,39 @@ class AdminController extends Controller
     
         return view('admin.adminviewprofile')->with($response);
     }
+
+    public function update(Request $request, $id)
+    {
+       
+       
+        $profile = Profile::find($id);
+      
+
+        $request->validate([
+            'hospitalname'=>'required',
+            'email'=>'required',
+            'password'=>'required'
+        ]);
+
+        $input = $request->all();
+
+        if(isset($request->image)){
+            $imageName = time().'.'.$request->image->extension();
+
+            $request->image->move(public_path('adminprofile'), $imageName);
+    
+            $input['image'] = $imageName;
+        }
+        else{
+            $input['image'] = $request->image_name;
+        }
+
+       // dd($input);
+    
+        $profile->update($input);
+
+        session()->flash('success', 'Profile Updated Successfully.');
+
+        return back();
+    }
 }

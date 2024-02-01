@@ -16,6 +16,7 @@ class Profile extends Model
         'type',
         'status',
         'password',
+        'image',
     ];
     use HasFactory;
 }

@@ -6,13 +6,13 @@
                     
                     <div class="col-lg-4 col-md-5">
                         <div class="footer_widget">
-                            <img src="assets/img/logo-mmm-ftr.png" class="mb-2" alt="" />
+                            <img src="{{asset('assets/img/logo-mmm-ftr.png')}}" class="mb-2" alt="" />
                         </div>
                     </div>
                     
                     <div class="col-lg-3 col-md-7 ml-auto">
                         <div class="footer_widget">
-                            <img src="assets/img/logo-crds-ftr.png" class="mb-2" alt="" />
+                            <img src="{{asset('assets/img/logo-crds-ftr.png')}}" class="mb-2" alt="" />
                         </div>
                     </div>
                     
@@ -31,7 +31,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-12 col-md-12 text-center">
-                        <p class="mb-0"><a href="https://themezhub.com"><img src="assets/img/power-bleap.png"></a>.</p>
+                        <p class="mb-0"><a href="https://themezhub.com"><img src="{{asset('assets/img/power-bleap.png')}}"></a>.</p>
                     </div>
                 </div>
             </div>
@@ -66,6 +66,58 @@
 <!-- This page plugins -->
 <!-- ============================================================== -->		
 <script>
+
+$(document).ready(function(){
+				$('.courseclick').click(function(){
+					$('.batchview').css("display","none");
+                    $('.instructorview').css("display","none");
+                    $('.studentview').css("display","none");
+					$('.courseview').css("display","block");
+                    //color
+                    $('.batchback').css("background-color","white");
+                    $('.instructorback').css("background-color","white");
+                    $('.studentback').css("background-color","white");
+					$('.courseback').css("background-color","rgb(191 230 247)");
+				});
+
+                $('.batchclick').click(function(){
+					$('.batchview').css("display","block");
+                    $('.instructorview').css("display","none");
+                    $('.studentview').css("display","none");
+					$('.courseview').css("display","none");
+                                        //color
+                     $('.batchback').css("background-color","rgb(191 230 247)");
+                    $('.instructorback').css("background-color","white");
+                    $('.studentback').css("background-color","white");
+					$('.courseback').css("background-color","white");
+				});
+
+                $('.instructorclick').click(function(){
+					$('.batchview').css("display","none");
+                    $('.instructorview').css("display","block");
+                    $('.studentview').css("display","none");
+					$('.courseview').css("display","none");
+                                        //color
+                    $('.batchback').css("background-color","white");
+                    $('.instructorback').css("background-color","rgb(191 230 247)");
+                    $('.studentback').css("background-color","white");
+					$('.courseback').css("background-color","white");
+				});
+
+                $('.studentclick').click(function(){
+					$('.batchview').css("display","none");
+                    $('.instructorview').css("display","none");
+                    $('.studentview').css("display","block");
+					$('.courseview').css("display","none");
+                                                            //color
+                     $('.batchback').css("background-color","white");
+                    $('.instructorback').css("background-color","white");
+                    $('.studentback').css("background-color","rgb(191 230 247)");
+					$('.courseback').css("background-color","white");
+				});
+
+			});
+
 /*File selection*/
 jQuery('input[name=file]').change(function() {
     alert(jQuery(this).val()); 
