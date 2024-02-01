@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentprofileController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,9 +42,9 @@ Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse'
 
 // vkdashboard 
 
-Route::get('/admindashboard', function () {
+Route::get('/dashboard', function () {
     return view('/admin/admindashboard');
-})->name('admindashboard');
+})->name('dashboard')->middleware('auth');
 
 //adminviewprofile
 Route::get('/adminviewprofile', function () {
@@ -62,11 +63,20 @@ Route::get('/createinstructor', function () {
 
 
 
+//dashboard 
+
+
+
+
 //login credentials
 Route::get('/login', function () {return view('login');})->middleware('guest');
 Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
-Route::post('/logout',[LoginController::class,'logout']);
+Route::get('/logout',[LoginController::class,'logout']);
 
+//admin view profile
+//Route::resource("/admin_view", AdminController::class)->middleware('auth');
+Route::get('/admin_view/edit/{encryptedId}', [AdminController::class, 'edit'])->name('admin_view.edit');
+Route::post('/admin_view/update/{encryptedId}', [AdminController::class, 'update'])->name('admin_view.update');
 
 
 
