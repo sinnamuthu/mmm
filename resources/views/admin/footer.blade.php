@@ -142,7 +142,47 @@ if (passwordInput.type === 'password') {
 
 </script>
 
+<!--vasanth-->
+<script>
 
+$(document).ready(function () {
+			
+			$('.courseview').css('display', 'block');
+			$('.batchview, .studentview, .instructorview').css('display', 'none');
+			
+			// Click event handlers
+			$('.batchclick').click(function () {
+				console.log('Batch tab clicked');
+				$('.batchview').css('display', 'block');
+				$('.courseview, .studentview, .instructorview').css('display', 'none');
+			});
+		
+			$('.courseclick').click(function () {
+				console.log('Course tab clicked');
+				$('.courseview').css('display', 'block');
+				$('.batchview, .studentview, .instructorview').css('display', 'none');
+			});
+		
+			$('.studentclick').click(function () {
+				console.log('Student tab clicked');
+				$('.studentview').css('display', 'block');
+				$('.batchview, .courseview, .instructorview').css('display', 'none');
+			});
+		
+			$('.instructorclick').click(function () {
+				console.log('Instructor tab clicked');
+				$('.instructorview').css('display', 'block');
+				$('.batchview, .courseview, .studentview').css('display', 'none');
+			});
+		});
+			/*File selection*/
+			jQuery('input[name=file]').change(function() {
+				alert(jQuery(this).val()); 
+				});
+				jQuery('figure.filename').click(function() {
+				jQuery('input[name=file]').click();
+			});
+		</script>
 
 
 </body>

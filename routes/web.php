@@ -40,11 +40,33 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
 
-//dashboard 
+// vkdashboard 
 
 Route::get('/dashboard', function () {
-    return view('/admin/dashboard2');
-})->name('dashboard');
+    return view('/admin/admindashboard');
+})->name('dashboard')->middleware('auth');
+
+//adminviewprofile
+Route::get('/adminviewprofile', function () {
+    return view('/admin/adminviewprofile');
+})->name('adminviewprofile');
+
+//admineditprofile
+Route::get('/admineditprofile', function () {
+    return view('/admin/admineditprofile');
+})->name('admineditprofile');
+
+//instructorflow
+Route::get('/createinstructor', function () {
+    return view('/admin/create-instructor');
+})->name('createinstructor');
+
+
+
+//dashboard 
+
+
+
 
 //login credentials
 Route::get('/login', function () {return view('login');})->middleware('guest');
@@ -55,8 +77,6 @@ Route::get('/logout',[LoginController::class,'logout']);
 //Route::resource("/admin_view", AdminController::class)->middleware('auth');
 Route::get('/admin_view/edit/{encryptedId}', [AdminController::class, 'edit'])->name('admin_view.edit');
 Route::post('/admin_view/update/{encryptedId}', [AdminController::class, 'update'])->name('admin_view.update');
-
-
 
 
 
