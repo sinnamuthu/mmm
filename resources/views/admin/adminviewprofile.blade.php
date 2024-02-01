@@ -197,7 +197,7 @@
 
                                            
                                             <div class="d-flex btn-wrap align-to-right">
-												<div class="btn-ask-qst"><a href="javascript:;">Edit Profile</a></div>
+												<div class="btn-ask-qst"><a href="{{ route('admineditprofile') }}">Edit Profile</a></div>
 												<div class="btn-ask-qst"><a href="javascript:;">Cancel</a></div>
 												<div class="btn primary"><a href="javascript:;">Save </a></div>
 											</div>

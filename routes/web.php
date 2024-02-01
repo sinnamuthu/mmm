@@ -39,13 +39,33 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
 
-//dashboard 
-Route::get('/coursedashboard', function () {
-    return view('/admin/dashboard1');
-});
-Route::get('/batchdashboard', function () {
-    return view('/admin/dashboard2');
-})->name('batchdashboard');
+// vkdashboard 
+
+Route::get('/admindashboard', function () {
+    return view('/admin/admindashboard');
+})->name('admindashboard');
+
+//adminviewprofile
+Route::get('/adminviewprofile', function () {
+    return view('/admin/adminviewprofile');
+})->name('adminviewprofile');
+
+//admineditprofile
+Route::get('/admineditprofile', function () {
+    return view('/admin/admineditprofile');
+})->name('admineditprofile');
+
+//instructorflow
+Route::get('/createinstructor', function () {
+    return view('/admin/create-instructor');
+})->name('createinstructor');
+
+
+
+//login credentials
+Route::get('/login', function () {return view('login');})->middleware('guest');
+Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
+Route::post('/logout',[LoginController::class,'logout']);
 
 
 

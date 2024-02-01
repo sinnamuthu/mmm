@@ -152,7 +152,7 @@
 							<div class="dashboard_wrap"><!--profile form-->	
 								<div class="row ">
 									<div class="col-xl-6 col-lg-6 col-md-6 mt-5 ">
-										<h2 class="m-0">View Profile</h2>
+										<h2 class="m-0">Edit Profile</h2>
 									</div>
 									<div class="col-xl-5 col-lg-2">
                                         <img class="dashbimg  align-to-right" src="assets/img/man.png" alt="" >
