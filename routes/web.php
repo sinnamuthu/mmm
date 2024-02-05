@@ -5,6 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentprofileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\DasboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,15 +38,23 @@ Route::post('/addstudent', 'App\Http\Controllers\StudentprofileController@addstu
 
 Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->name('addcourse');
 
+//vk
+
+Route::post('/instructor', 'App\Http\Controllers\InstructorController@store')->name('newinstructor');
+Route::post('/batch', 'App\Http\Controllers\BatchController@store')->name('newbatch');
+
+
+Route::post("authenticate",[LoginController::class,'authenticate'])->name('authenticate');
+
 //Route::resource('/createstudent', StudentprofileController::class);
 
 Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse');
 
 // vkdashboard 
 
-Route::get('/dashboard', function () {
-    return view('/admin/admindashboard');
-})->name('dashboard')->middleware('auth');
+Route::get('/dashboard', [DasboardController::class, 'index'])
+    ->name('dashboard')
+    ->middleware('auth');
 
 //adminviewprofile
 Route::get('/adminviewprofile', function () {
@@ -56,14 +66,31 @@ Route::get('/admineditprofile', function () {
     return view('/admin/admineditprofile');
 })->name('admineditprofile');
 
-//instructorflow
+//createinstructor
 Route::get('/createinstructor', function () {
     return view('/admin/create-instructor');
 })->name('createinstructor');
 
+//instructorflow
+Route::get('/instructor', 'App\Http\Controllers\instructorController@index')->name('instructor');
+
+//batch
+Route::get('/batch', 'App\Http\Controllers\BatchController@index')->name('batch');
+
+//createbatch
+Route::get('/createbatch', function () {
+    return view('/admin/create-batch');
+})->name('createbatch');
+
+//insedit
+Route::get('/editinstructor', function () {
+    return view('/admin/edit-instructor');
+})->name('editinstructor');
+
+//insdel
+Route::get('/delinstructor/{instructor_id}','App\Http\Controllers\instructorController@destroy')->middleware('auth') ->name('delinstructor');
 
 
-//dashboard 
 
 
 

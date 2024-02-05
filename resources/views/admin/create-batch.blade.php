@@ -161,8 +161,8 @@
 								
 								<div class="row justify-content-center">
 									<div class="col-xl-12 col-lg-12 col-md-12">
-										<form>
-                                            
+									<form action="{{route ('newbatch')}}" method ="post">
+                                     @csrf
 
 											<div class="form-group smalls">
 												<label>Batch Title:</label>
@@ -170,28 +170,32 @@
 											</div>
 
                                             <div class="form-group smalls">
-                                                <label>Batch Enroll Date </label>
-                                                <div class="row m-0">
-                                                    <input type="text" class="col-9 col-sm-9 form-control" name="dates" value="08/05/2021 - 10/10/2021">
-                                                    <div class="col-3 col-sm-3">
-                                                       
-                                                    </div>
-                                                </div>
-                                            </div>
+											<label>Batch Enroll Date</label>
+											<div class="row m-0">
+												<input type="text" class="col-9 col-sm-9 form-control" id="dateRange" name="dates" value="08/05/2021 - 10/10/2021">
+												<div class="col-3 col-sm-3">
+													<!-- Hidden input fields for start and end dates -->
+													<input type="hidden" id="startDate" name="startDate">
+													<input type="hidden" id="endDate" name="endDate">
+												</div>
+											</div>
+										</div>
 											
-										</form>
-									</div>
+									
 								</div>
+							</div>
 								<div class="d-flex btn-wrap align-to-right">
 									<div class="btn-ask-qst"><a href="javascript:;">Cancel</a></div>
-									<div class="btn primary"><a href="javascript:;">Create Batch</a></div>
+									<button type="submit">Create Instructor</button>
 								</div>
 								<div class="clearfix"></div>	
 								
 							</div>
-
+							</form>
 						</div>
 					</div>
+
+
 				</div>
 			</div>
 			
@@ -275,6 +279,19 @@
 		</script>
         <script>
 			$('input[name="dates"]').daterangepicker();
+		</script>
+		<script>
+			function splitAndSubmit() {
+				var dateRange = document.getElementById('dateRange').value;
+				var [startDate, endDate] = dateRange.split(' - ');
+
+				// Update hidden input fields
+				document.getElementById('startDate').value = startDate;
+				document.getElementById('endDate').value = endDate;
+
+				// Submit the form
+				document.getElementById('batchForm').submit();
+			}
 		</script>
 	</body>
 </html>

@@ -11,8 +11,8 @@
 									<ul id="side-menu">
 										<li class="active"><a href="javascript:;"><i class="fa fa-tachometer-alt"></i>Dashboard</a></li>
                                         <li ><a href=""><i class="fas fa-shopping-basket"></i>Courses</a></li>
-                                        <li ><a href="javascript:;"><i class="fa-solid fa-user"></i>Batch</a></li>
-                                        <li ><a href=""><i class="fas fa-user"></i>Instructor</a></li>
+                                        <li ><a href="{{route('batch')}}"><i class="fa-solid fa-user"></i>Batch</a></li>
+                                        <li ><a href="{{route('instructor')}}"><i class="fas fa-user"></i>Instructor</a></li>
                                         <li ><a href="javascript:;"><i class="fas fa-user"></i>Student</a></li>
 
 									</ul>
@@ -153,9 +153,8 @@
                                                                         <table class="table dash_list">
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th scope="col">Batch Year</th>
+                                                                                   
                                                                                     <th scope="col">Batch Name</th>
-                                                                                    <th scope="col">Course Name</th>
                                                                                     <th scope="col">Batch Status</th>
                                                                                     <th scope="col">Batch Start Date</th>
                                                                                     <th scope="col">Batch End Date</th>
@@ -163,71 +162,28 @@
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6> Software Applications</h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip theme-cl theme-bg-light">completed</span></td>
-                                                                                    <td name="Bat_sdate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
-                                                                                <!-- 2 -->
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6>MMM Design</h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip text-danger bg-light-danger">Expired</span></td>
-                                                                                    <td  name="Bat_sdate" ><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
-                                                                                <!-- 3 -->
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6>praveeen course</h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip theme-cl theme-bg-light">completed</span></td>
-                                                                                    <td name="Bat_sdate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
-                                                                                <!-- 4 -->
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6>yogesh course </h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip theme-cl theme-bg-light">completed</span></td>
-                                                                                    <td name="Bat_sdate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
-                                                                                <!-- 2 -->
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6>Sam  </h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip text-danger bg-light-danger">Expired</span></td>
-                                                                                    <td  name="Bat_sdate" ><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
-                                                                                <!-- 3 -->
-                                                                                <tr>
-                                                                                    <th scope="row" name="Bat_yr">2024</th>
-                                                                                    <td name="Bat_nm"><h6>UI/UX Design </h6></td>
-                                                                                    <td name="Bat_crs" ><div class="smalls">MMM first course</div></td>
-                                                                                    <td name="Bat_sts"><span class="trip theme-cl theme-bg-light">completed</span></td>
-                                                                                    <td name="Bat_sdate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                    <td name="Bat_enddate"><span class="smalls">13/01/2024</span></td>
-                
-                                                                                </tr>
+                                                                            @foreach($batches as $batch)
+                                                    <tr>
+                                                        <th scope="row">{{ $batch->batch_id }}</th>
+                                                        <td><h6>{{ $batch->bt_innertitle }}</h6></td>
+                                                        <td><span class="trip theme-cl theme-bg-light">{{ $batch->status }}</span></td>
+                                                        <td>
+                                                            @if($batch->start_date)
+                                                                <span class="smalls">{{ \Carbon\Carbon::parse($batch->start_date)->format('d/m/Y') }}</span>
+                                                            @else
+                                                                <span class="smalls">N/A</span>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if($batch->end_date)
+                                                                <span class="smalls">{{ \Carbon\Carbon::parse($batch->end_date)->format('d/m/Y') }}</span>
+                                                            @else
+                                                                <span class="smalls">N/A</span>
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                                               
                                                                                 
                                                                                 
                                                                                 
