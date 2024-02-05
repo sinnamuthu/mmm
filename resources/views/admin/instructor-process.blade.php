@@ -138,37 +138,38 @@
 					<!-- /Row -->
                             
 				<div class="row">
+					<div class="col-sm-12">
 					<div class="instructor_info">
 						<div class="dashboard_wrap">
 						<!-- resources/views/admin/instructor-process.blade.php -->
 
-@foreach ($instructors as $instructor)
-    <div class="single_instructor">
-        <div class="single_instructor_thumb">
-            <a href="#">
-			<img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt=""  />
+						@foreach ($instructors as $instructor)
+							<div class="single_instructor">
+								<div class="single_instructor_thumb">
+									<a href="#">
+									<img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt=""  />
 
-            </a>
-        </div>
-        <div class="single_instructor_caption">
-            <h4><a href="#">{{ $instructor->ins_fname }} {{ $instructor->ins_lname }}</a></h4>
-            <span>{{ $instructor->ins_imstqua }}</span>
-            <div class="item-desc">
-                <p>{{ $instructor->ins_bdescription }}</p>
-            </div>
-        </div>
-        <div class="dropdown show">
-			
-            <a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-ellipsis-h"></i>
-            </a>
-            <div class="drp-select dropdown-menu">
-                <a class="dropdown-item" href="{{route ('editinstructor')}}">Edit</a>
-                <a class="dropdown-item" href="{{route ('delinstructor',$instructor->instructor_id)}}">Delete</a>
-            </div>
-        </div>
-    </div>
-@endforeach
+									</a>
+								</div>
+								<div class="single_instructor_caption">
+									<h4><a href="#">{{ $instructor->ins_fname }} {{ $instructor->ins_lname }}</a></h4>
+									<span>{{ $instructor->ins_imstqua }}</span>
+									<div class="item-desc">
+										<p>{{ $instructor->ins_bdescription }}</p>
+									</div>
+								</div>
+								<div class="dropdown show">
+									
+									<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fas fa-ellipsis-h"></i>
+									</a>
+									<div class="drp-select dropdown-menu">
+										<a class="dropdown-item" href="{{route ('editinstructor')}}">Edit</a>
+										<a class="dropdown-item" href="{{route ('delinstructor',$instructor->instructor_id)}}">Delete</a>
+									</div>
+								</div>
+							</div>
+						@endforeach
 
 
 							<!-- pagination  -->
@@ -197,6 +198,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 						
 				<!-- ============================ Footer Start ================================== -->

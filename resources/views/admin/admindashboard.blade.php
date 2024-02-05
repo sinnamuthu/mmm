@@ -290,53 +290,9 @@
 																		</div>
 																	</td>
 																</tr>
-																<!--  -->
-																<tr>
-																	<th scope="row"><img src="assets/img/Thum.png" alt=""></th>
-																	<td ><h6>  How To Learn UI/UX Design pattern for succesfull software applications</h6></td>
+																
 
-																	
-																	<td ><div class="smalls">10</div></td>
-																	<td  ><span    class="smalls">25</span></td>
-																	<td   ><span class="smalls">2024</span></td>
-																	<td ><span class="trip text-danger bg-light-danger">	UN-PUBLISHED</span></td>
-																	<td>
-																		<div class="dropdown show">
-																			<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																				<i class="fas fa-ellipsis-h"></i>
-																			</a>
-																			<div class="drp-select dropdown-menu">
-																				<a class="dropdown-item" href="JavaScript:Void(0);">publish Course</a>
-																				<a class="dropdown-item" href="JavaScript:Void(0);">Unpublish Course</a>
-																				<a class="dropdown-item" href="JavaScript:Void(0);">Duplicate Course</a>
-																				<a class="dropdown-item " id="del_txt" href="JavaScript:Void(0);">Delete</a>
-																			</div>
-																		</div>
-																	</td>
-																</tr>
-
-																<!--  -->
-																<tr>
-																	<th scope="row"><img src="assets/img/Thum.png" alt=""></th>
-																	<td><h6> Software Applications</h6></td>
-																	<td><div class="smalls">10</div></td>
-																	<td><span class="smalls">50</span></td>
-																	<td ><span class="smalls">2023</span></td>
-																	<td ><span class="trip text-danger bg-light-danger"> UN-PUBLISHED</span></td>
-																	<td>
-																		<div class="dropdown show">
-																			<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																				<i class="fas fa-ellipsis-h"></i>
-																			</a>
-																			<div class="drp-select dropdown-menu">
-																				<a class="dropdown-item" href="JavaScript:Void(0);">publish Course</a>
-																				<a class="dropdown-item" href="JavaScript:Void(0);">Unpublish Course</a>
-																				<a class="dropdown-item" href="JavaScript:Void(0);">Duplicate Course</a>
-																				<a class="dropdown-item " id="del_txt" href="JavaScript:Void(0);">Delete</a>
-																			</div>
-																		</div>
-																	</td>
-																</tr>
+																
 												
 															</tbody>
 														</table>
@@ -394,12 +350,15 @@
                 
                                                             
                                 
-                                                                            <!-- ============================ Page Title Start================================== -->
+                                           
+                                                                    <!-- ============================ Page Title Start================================== -->
+                                                                    @foreach ($instructors as $instructor)    
                                             <div class="ed_detail_dash">
                                                 <div class="container-fluid">
                                                     <div class="row align-items-center mb-5">
                                                         <div class="col-lg-3 col-md-12 col-sm-12">
-                                                            <div class="authi_125">
+                                                       
+                                                <div class="authi_125">
                                                                 <div class="authi_125_thumb">
                                                                     <img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt="" />
                                                                 </div>
@@ -411,12 +370,12 @@
                                                             <div class="dlkio_452">
                                                                 <div class="ed_detail_wrap">
                                                                     <div class="ed_header_caption">
-                                                                        <h2 class="ed_title" name="inst_name">Instructor Name </h2>
-                                                                        <h3 class="inst_subhed" name="inst_disg">MBBS, PhD</h3>
+                                                                        <h2 class="ed_title" name="inst_name">{{ $instructor->ins_fname }} </h2>
+                                                                        <h3 class="inst_subhed" name="inst_disg">{{$instructor->ins_imstqua}}</h3>
                                                                         
                                                                     </div>
                                                                     <div class="ed_header_short">
-                                                                        <p name="in_para">Excepteur sint occaecat cupidatat non proident, deserunt mollit anim id occaecat cupidatat non proident, deserunt mollit anim i occaecat cupidatat non proident, deserunt mollit anim i  est laborum. accusantium doloremque laudantium,vitae dicta <a href="#" class="theme-cl">Read More..</a>.</p>
+                                                                        <p name="in_para"> {{$instructor->ins_bdescription}}<a href="#" class="theme-cl">Read More..</a>.</p>
                                                                     </div>
                                                                     
                                                                     
@@ -432,99 +391,9 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            @endforeach
                                             <!-- ============================ Page Title End ================================== -->
                                         
-                                                                     <!-- 2  -->
-                                
-                                                                       <!-- ============================ Page Title Start================================== -->
-                                            <div class="ed_detail_dash">
-                                                <div class="container-fluid">
-                                                    <div class="row align-items-center mb-5">
-                                                        <div class="col-lg-3 col-md-12 col-sm-12">
-                                                            <div class="authi_125">
-                                                                <div class="authi_125_thumb">
-                                                                    <img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt="" />
-                                                                </div>
-                                                                <a href="#" class="klio_45"><div class="lklo_45"><i class="fas fa-play"></i></div><h6>Preview</h6></a>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-9 col-md-12 col-sm-12">
-                                                            <div class="dlkio_452">
-                                                                <div class="ed_detail_wrap">
-                                                                    <div class="ed_header_caption">
-                                                                        <h2 class="ed_title" name="inst_name">Instructor Name </h2>
-                                                                        <h3 class="inst_subhed" name="inst_disg">MBBS, PhD</h3>
-                                                                        
-                                                                    </div>
-                                                                    <div class="ed_header_short">
-                                                                        <p name="in_para">Excepteur sint occaecat cupidatat non proident, deserunt mollit anim id occaecat cupidatat non proident, deserunt mollit anim i occaecat cupidatat non proident, deserunt mollit anim i  est laborum. accusantium doloremque laudantium,vitae dicta <a href="#" class="theme-cl">Read More..</a>.</p>
-                                                                    </div>
-                                                   
-                                                                </div>
-                                                                <div class="dlkio_last">
-                                                                    <div class="ed_view_link">
-                                                                        <a href="#" class="btn instruct_edit " name="inst_edit">Edit</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- ============================ Page Title End ================================== -->
-                                
-                                            <!-- 3 -->
-                                
-                                                  <!-- ============================ Page Title Start================================== -->
-                                            <div class="ed_detail_dash">
-                                                <div class="container-fluid">
-                                                    <div class="row align-items-center mb-5">
-                                                        <div class="col-lg-3 col-md-12 col-sm-12">
-                                                            <div class="authi_125">
-                                                                <div class="authi_125_thumb">
-                                                                    <img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt=""  />
-                                                                </div>
-                                                                <a href="#" class="klio_45"><div class="lklo_45"><i class="fas fa-play"></i></div><h6>Preview</h6></a>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <div class="col-lg-9 col-md-12 col-sm-12">
-                                                            <div class="dlkio_452">
-                                                                <div class="ed_detail_wrap">
-                                                                    <div class="ed_header_caption">
-                                                                        <h2 class="ed_title" name="inst_name">Instructor Name </h2>
-                                                                        <h3 class="inst_subhed" name="inst_disg">MBBS, PhD</h3>
-                                                                        
-                                                                    </div>
-                                                                    <div class="ed_header_short">
-                                                                        <p name="in_para">Excepteur sint occaecat cupidatat non proident, deserunt mollit anim id occaecat cupidatat non proident, deserunt mollit anim i occaecat cupidatat non proident, deserunt mollit anim i  est laborum. accusantium doloremque laudantium,vitae dicta <a href="#" class="theme-cl">Read More..</a>.</p>
-                                                                    </div>
-                                                                    
-                                                                    
-                                                                    
-                                                                </div>
-                                                                <div class="dlkio_last">
-                                                                    <div class="ed_view_link">
-                                                                        <a href="#" class="btn instruct_edit " name="inst_edit">Edit</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- ============================ Page Title End ================================== -->
-                                <!-- 4 -->
-                                
-                                  <!-- ============================ Page Title Start================================== -->
-                             
-                                
-                                 
-                                
-                                
-                                            <!-- ============================ Page Title End ================================== -->
-                                                          
                                                                          </div>
                                                                     </div>
                                                                 </div>
