@@ -52,9 +52,9 @@ Route::get('/createcourse', 'App\Http\Controllers\CourseController@createcourse'
 
 // vkdashboard 
 
-Route::get('/dashboard', [DasboardController::class, 'index'])
-    ->name('dashboard')
-    ->middleware('auth');
+Route::get('/dashboard', 'App\Http\Controllers\DasboardController@index')->name('dashboard') ->middleware('auth');
+    
+   
 
 //adminviewprofile
 Route::get('/adminviewprofile', function () {
