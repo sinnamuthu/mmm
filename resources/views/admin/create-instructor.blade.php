@@ -164,7 +164,6 @@
 								     	<div class="dashboard_wrap">
 										
 										  <div class="form_blocs_wrap">
-											<form>
 												<div class="row justify-content-between">
 													
 													<div class="col-xl-3 col-lg-4 col-md-5 col-sm-12">
@@ -186,12 +185,13 @@
 													   <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12">
 															
 															<!-- Basic -->
-
+															<form action="{{ route('newinstructor') }}" method="post">
+                                                             @csrf
                                                            <div class="instructor_data">
 																
 																<div class="form-group smalls">
 																	<label>First Name*</label>
-																	<input type="text" class="form-control" name="ins_fname" placeholder="First Name">
+																	<input type="text" class="form-control" name="ins_fname"  placeholder="First Name">
 																</div>
 																
 																<div class="form-group smalls">
@@ -239,7 +239,7 @@
 																</div>
 																<div class="d-flex btn-wrap align-to-right">
 																	<div class="btn-ask-qst" id="exitButton"><a href="javascript:;">Cancel</a></div>
-																	<div class="btn primary" id="createInstructorButton"><a href="javascript:;">Create Instructor</a></div>
+																	<button type="submit" onclick="submitForm()">Create Instructor</button>
 																	<!-- popup exit -->
 
 																	<div id="confirmModal" class="modal">
@@ -252,11 +252,11 @@
 																	  </div>
 																</div>
 															</div>
+</form>
 															
 												
 													
 												</div>
-											</form>
 										</div>
 									</div>
                                     </div>
@@ -377,46 +377,6 @@
 				jQuery('input[name=file]').click();
 			});
 		</script>
-
-<script>
-    // Get the modal
-    var modal = document.getElementById("confirmModal");
-
-    // Get the button that opens the modal
-    var exitBtn = document.getElementById("exitButton");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks the button, open the modal 
-    exitBtn.onclick = function() {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-    // Function to handle the OK button click
-    document.getElementById("okButton").onclick = function() {
-      // Add your logic here for what happens when OK is clicked
-      modal.style.display = "none"; // Close the modal
-    }
-
-    // Function to handle the Cancel button click
-    document.getElementById("cancelButton").onclick = function() {
-      // Add your logic here for what happens when Cancel is clicked
-      modal.style.display = "none"; // Close the modal
-    }
-  </script>
 		
 	</body>
 </html>

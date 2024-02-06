@@ -131,104 +131,46 @@
 							Instructor
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12 pb-4 instructor_add_text  text-right">
-							<a href="create_instructor.html" class="btn_instructor ">Create Instructor</a>
+							<a href="{{route('createinstructor')}}" class="btn_instructor ">Create Instructor</a>
 							</div>
 						</div>
 					</div>
 					<!-- /Row -->
                             
 				<div class="row">
+					<div class="col-sm-12">
 					<div class="instructor_info">
 						<div class="dashboard_wrap">
-							<div class="single_instructor"><!--Instructors-->
+						<!-- resources/views/admin/instructor-process.blade.php -->
+
+						@foreach ($instructors as $instructor)
+							<div class="single_instructor">
 								<div class="single_instructor_thumb">
-									<a href="#"><img src="./assets/img/dr_ahmed.jpg" class="img-fluid" alt=""></a>
+									<a href="#">
+									<img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt=""  />
+
+									</a>
 								</div>
 								<div class="single_instructor_caption">
-									<h4><a href="#">Dr. Ahmed Ali</a>
-									<span>MBBS, MS, Mch (Surgical Gastroenterology) MNAMS</span></h4>
+									<h4><a href="#">{{ $instructor->ins_fname }} {{ $instructor->ins_lname }}</a></h4>
+									<span>{{ $instructor->ins_imstqua }}</span>
 									<div class="item-desc">
-										<p>Leader in surgical gastroenterology in India with more than 50 long years of Padmashri Award Winner and Multiple International Award Winner. Former President of the Indian Association of Surgical Gastroenterology (Tamil Nadu) and Associations of Surgeons (Tamil Nadu).</p>
-									</div>													
-								</div>				
+										<p>{{ $instructor->ins_bdescription }}</p>
+									</div>
+								</div>
 								<div class="dropdown show">
+									
 									<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										<i class="fas fa-ellipsis-h"></i>
 									</a>
 									<div class="drp-select dropdown-menu">
-										<a class="dropdown-item" href="JavaScript:Void(0);" data-toggle="modal" data-target="#delCnt">Edit</a>
-										<a class="dropdown-item" href="JavaScript:Void(0);" data-toggle="modal" data-target="#delAttCnt">Delete</a>
+										<a class="dropdown-item" href="{{route ('editinstructor')}}">Edit</a>
+										<a class="dropdown-item" href="{{route ('delinstructor',$instructor->instructor_id)}}">Delete</a>
 									</div>
 								</div>
-							</div><!--./Instructors-->
-							<div class="single_instructor"><!--Instructors-->
-								<div class="single_instructor_thumb">
-									<a href="#"><img src="./assets/img/dr_balaMuruganS.jpg" class="img-fluid" alt=""></a>
-								</div>
-								<div class="single_instructor_caption">
-									<h4><a href="#">Dr. Bala Murugan. S</a>
-									<span>MBBS, MS, MRCS (UK), FACS (USA), FMIS (TAIWAN), FLHPB (South Korea)</span></h4>
-									<div class="item-desc">
-										<p>Surgical Gastroenterology and Gastrointestinal Oncology in Dr. Mehta’s Global Campus – Velappanchavadi, Chennai and has experience 10 years of in these fields. He is expertise in laparoscopic cancer surgery and HPB (Hepato-Pancreato-Biliary) surgery. He is one of the experienced surgeons with excellent GI surgery achievements in the health care sector.</p>
-									</div>													
-								</div>				
-								<div class="dropdown show">
-									<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<i class="fas fa-ellipsis-h"></i>
-									</a>
-									<div class="drp-select dropdown-menu">
-										<a class="dropdown-item" href="JavaScript:Void(0);">Edit</a>
-										<a class="dropdown-item" href="JavaScript:Void(0);">Delete</a>
-									</div>
-								</div>
-							</div><!--./Instructors-->
-							<div class="single_instructor"><!--Instructors-->
-								<div class="single_instructor_thumb">
-									<a href="#"><img src="./assets/img/dr_Ilavarasi.jpg" class="img-fluid" alt=""></a>
-								</div>
-								<div class="single_instructor_caption">
-									<h4><a href="#">Dr. Ilavarasi</a>
-									<span>MD(Gen Med), DM(MGE)</span></h4>
-									<div class="item-desc">
-										<p>Medical Gastroenterologist with expertise in Interventional endoscopic procedures like banding, sclerotherapy, endoscopic dilatations, ERCP and EUS, and treating alcohol and viral related liver disease. Graduated from Madras Medical College.</p>
-									</div>													
-								</div>				
-								<div class="dropdown show">
-									<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<i class="fas fa-ellipsis-h"></i>
-									</a>
-									<div class="drp-select dropdown-menu">
-										<a class="dropdown-item" href="JavaScript:Void(0);">Edit</a>
-										<a class="dropdown-item" href="JavaScript:Void(0);">Delete</a>
-									</div>
-								</div>
-							</div><!--./Instructors-->
-							<div class="single_instructor"><!--Instructors-->
-								<div class="single_instructor_thumb">
-									<a href="#"><img src="./assets/img/dr_pAnbalagan.jpg" class="img-fluid" alt=""></a>
-								</div>
-								<div class="single_instructor_caption">
-									<h4><a href="#">Dr. P. Anbalagan</a>
-									<span>MS, MCh(SGE)</span></h4>
-									<div class="item-desc">
-										<ol>
-											<li>Gallbladder,pancreatic and Liver disease</li>
-											<li>Gastrointestinal cancers, Liver and Pancreatic cancers</li>
-											<li>Advanced Laparoscopic surgeries</li>
-											<li>Complex fistula, Haemorrhoids and colorectal disease</li>
-										</ol>
-									</div>													
-								</div>				
-								<div class="dropdown show">
-									<a class="btn btn-action" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<i class="fas fa-ellipsis-h"></i>
-									</a>
-									<div class="drp-select dropdown-menu">
-										<a class="dropdown-item" href="JavaScript:Void(0);">Edit</a>
-										<a class="dropdown-item" href="JavaScript:Void(0);">Delete</a>
-									</div>
-								</div>
-							</div><!--./Instructors-->
+							</div>
+						@endforeach
+
 
 							<!-- pagination  -->
 							<div class="row align-items-center justify-content-between">
@@ -256,6 +198,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 						
 				<!-- ============================ Footer Start ================================== -->
