@@ -383,7 +383,7 @@
                                                                 </div>
                                                                 <div class="dlkio_last">
                                                                     <div class="ed_view_link">
-                                                                        <a href="#" class="btn instruct_edit " name="inst_edit">Edit</a>
+                                                                        <a href="{{route ('editinstructor' ,$instructor->instructor_id)}}" class="btn instruct_edit " name="inst_edit">Edit</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

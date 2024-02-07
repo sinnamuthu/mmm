@@ -40,7 +40,9 @@ Route::post('/addcourse', 'App\Http\Controllers\CourseController@addcourse')->na
 
 //vk
 
-Route::post('/instructor', 'App\Http\Controllers\InstructorController@store')->name('newinstructor');
+Route::post('/newinstructor', 'App\Http\Controllers\InstructorController@store')->name('newinstructor');
+
+
 Route::post('/batch', 'App\Http\Controllers\BatchController@store')->name('newbatch');
 
 
@@ -83,9 +85,9 @@ Route::get('/createbatch', function () {
 })->name('createbatch');
 
 //insedit
-Route::get('/editinstructor', function () {
-    return view('/admin/edit-instructor');
-})->name('editinstructor');
+Route::get('/editinstructor/{instructor_id}', 'App\Http\Controllers\InstructorController@edit')->name('editinstructor');
+
+Route::put('/updateinstructor/{instructor_id}','App\Http\Controllers\instructorController@update')->name('updateinstructor');
 
 //insdel
 Route::get('/delinstructor/{instructor_id}','App\Http\Controllers\instructorController@destroy')->middleware('auth') ->name('delinstructor');

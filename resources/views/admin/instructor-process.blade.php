@@ -147,7 +147,7 @@
 							<div class="single_instructor">
 								<div class="single_instructor_thumb">
 									<a href="#">
-									<img src="https://via.placeholder.com/700x550" name="in_propic" class="img-fluid rounded" alt=""  />
+									<img src="{{ asset('instructorimg/' . $instructor->instructor_image) }}" name="in_propic" class="img-fluid rounded" alt=""  />
 
 									</a>
 								</div>
@@ -155,8 +155,9 @@
 									<h4><a href="#">{{ $instructor->ins_fname }} {{ $instructor->ins_lname }}</a></h4>
 									<span>{{ $instructor->ins_imstqua }}</span>
 									<div class="item-desc">
-										<p>{{ $instructor->ins_bdescription }}</p>
-									</div>
+									<p>{!! nl2br(e(strip_tags($instructor->ins_bdescription))) !!}</p>
+								</div>
+
 								</div>
 								<div class="dropdown show">
 									
@@ -164,7 +165,7 @@
 										<i class="fas fa-ellipsis-h"></i>
 									</a>
 									<div class="drp-select dropdown-menu">
-										<a class="dropdown-item" href="{{route ('editinstructor')}}">Edit</a>
+										<a class="dropdown-item" href="{{route ('editinstructor' ,$instructor->instructor_id)}}">Edit</a>
 										<a class="dropdown-item" href="{{route ('delinstructor',$instructor->instructor_id)}}">Delete</a>
 									</div>
 								</div>
@@ -174,32 +175,16 @@
 
 							<!-- pagination  -->
 							<div class="row align-items-center justify-content-between">
-								<div class="col-xl-6 col-lg-6 col-md-12">
-									<p class="p-0">Showing 1 to 5 of 10 entire</p>
-								</div>
-								<div class="col-xl-6 col-lg-6 col-md-12">
-									<nav class="float-right">
-										<ul class="pagination smalls m-0">
-											<li class="page-item disabled">
-											<a class="page-link" href="#" tabindex="-1"><i class="fas fa-arrow-circle-left"></i></a>
-											</li>
-											<li class="page-item"><a class="page-link" href="#">1</a></li>
-											<li class="page-item active">
-											<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-											</li>
-											<li class="page-item"><a class="page-link" href="#">3</a></li>
-											<li class="page-item">
-											<a class="page-link" href="#"><i class="fas fa-arrow-circle-right"></i></a>
-											</li>
-										</ul>
-									</nav>
-								</div>
+							<div class="col-xl-6 col-lg-6 col-md-12">
+								<p class="p-0">Showing {{ $instructors->firstItem() }} to {{ $instructors->lastItem() }} of {{ $instructors->total() }} entries</p>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-12">
+								<nav class="float-right">
+									{{ $instructors->links() }}
+								</nav>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			</div>
+
 						
 				<!-- ============================ Footer Start ================================== -->
 				<footer id="footer" class="default">
